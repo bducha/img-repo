@@ -5,11 +5,12 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+// Initializes the echo server
 func Init() {
 	e := echo.New()
 	e.Use(middleware.Logger())
 
-	e.Static("/images", "var/images")
+	e.Static("/img", "var/images")
 
 	declareRoutes(e)
 
